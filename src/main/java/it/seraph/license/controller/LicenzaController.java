@@ -2,6 +2,7 @@ package it.seraph.license.controller;
 
 import java.security.interfaces.RSAPrivateKey;
 import java.time.Instant;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
@@ -42,7 +43,7 @@ public class LicenzaController {
         
         if (u.getBannato().booleanValue()) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(u.getCommento());
         
-        if (u.getScadenza().isBefore(ZonedDateTime.now())) return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Expired");
+        if (u.getScadenza().isBefore(ZonedDateTime.now(ZoneOffset.UTC))) return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Expired");
         
         if (u.getHwid() == null) {
         	u.setHwid(req.getHwid());
