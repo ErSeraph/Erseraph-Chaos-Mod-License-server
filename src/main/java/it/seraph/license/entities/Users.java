@@ -24,7 +24,17 @@ public class Users {
 
     @Column(name = "licenza", nullable = false, unique = true)
     private String licenza;
-
+    
+    @Column(name = "hwid", nullable = true, unique = true)
+    private String hwid;
+    
     @Column(name = "scadenza", nullable = false)
     private ZonedDateTime scadenza;
+    
+    @Column(name = "bannato", nullable = false)
+    private Boolean bannato;
+    
+    @Column(name = "commento", nullable = true)
+    private String commento;
+
 }

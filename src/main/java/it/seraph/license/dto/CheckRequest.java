@@ -6,5 +6,5 @@ import lombok.Data;
 public class CheckRequest {
 
     private String licenza;
-    private String nonce;
+    private String hwid;
 }
