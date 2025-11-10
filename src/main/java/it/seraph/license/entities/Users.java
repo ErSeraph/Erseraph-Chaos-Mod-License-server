@@ -22,7 +22,7 @@ public class Users {
     @Column(name = "username", nullable = false, unique = true)
     private String username;
 
-    @Column(name = "licenza", nullable = false, unique = true)
+    @Column(name = "licenza", unique = true)
     private String licenza;
     
     @Column(name = "hwid", nullable = true, unique = true)
@@ -33,6 +33,9 @@ public class Users {
     
     @Column(name = "bannato", nullable = false)
     private Boolean bannato;
+    
+    @Column(name = "log", nullable = false)
+    private Boolean log;
     
     @Column(name = "commento", nullable = true)
     private String commento;
