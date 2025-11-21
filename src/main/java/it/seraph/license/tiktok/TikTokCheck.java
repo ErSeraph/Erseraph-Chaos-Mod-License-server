@@ -77,7 +77,7 @@ public class TikTokCheck {
                         client.getRoomInfo().getConnectionState() == ConnectionState.CONNECTED;
 
                 if (!isConnected) {
-                    System.out.println("❌ Client " + hostId + " non più in live. Disconnessione...");
+                    System.out.println("❌ Client " + hostId + " non più in live. Disconnessione..."); //TODO non funziona
                     client.disconnect();
                     liveClients.remove(hostId);
                 }
@@ -89,7 +89,7 @@ public class TikTokCheck {
         });
     }
 
-    @Scheduled(initialDelay = 5000, fixedDelay = 60000)
+    @Scheduled(initialDelay = 5000, fixedDelay = 120000)
     public void syncNicknamesFromTikTok() {
         List<Users> users = userRepository.findAllTikTokUsernames();
 
